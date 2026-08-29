@@ -9,9 +9,11 @@ export function SectionHeader({ title, onPressViewAll }: SectionHeaderProps) {
   return (
     <View style={styles.row}>
       <Text style={styles.title}>{title}</Text>
-      <TouchableOpacity activeOpacity={0.5} onPress={onPressViewAll} hitSlop={8}>
-        <Text style={styles.viewAll}>View all</Text>
-      </TouchableOpacity>
+      {onPressViewAll ? (
+        <TouchableOpacity activeOpacity={0.5} onPress={onPressViewAll} hitSlop={8}>
+          <Text style={styles.viewAll}>View all</Text>
+        </TouchableOpacity>
+      ) : null}
     </View>
   );
 }
